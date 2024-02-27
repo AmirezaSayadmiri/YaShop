@@ -18,10 +18,14 @@ const User = sequelize.define(
         },
         verificationCode: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+        },
+        resetPasswordToken: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         isActive: {
             type: DataTypes.BOOLEAN,
+            allowNull: false,
             defaultValue: false,
         },
     },

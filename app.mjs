@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(authRouter);
 
 const runApp = async () => {
-    await sequelize.sync({ force: true });
-    app.listen(8000);
+    await sequelize.sync({ force: false });
+    app.listen(process.env.PORT);
 };
 
 runApp();
