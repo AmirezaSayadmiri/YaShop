@@ -2,6 +2,9 @@ import sequelize from "./database.mjs";
 import "./dbRelations.mjs";
 import authRouter from "./routes/authRoutes.mjs";
 import express from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
