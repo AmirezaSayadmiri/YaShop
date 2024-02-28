@@ -1,16 +1,9 @@
 import { validate } from "validate.js";
-import { giveErrorsArray } from "../helpers/validationHelpers.mjs";
+import { getValidationErrors, giveErrorsArray } from "../helpers/validationHelpers.mjs";
 import User from "../models/User.mjs";
 import bcrypt from "bcryptjs";
-import transporter from "../helpers/emailSender.mjs";
 
 validate.validators.presence.message = "is required";
-
-const getValidationErrors = (data, constraints) => {
-    const errorsObject = validate(data, constraints);
-
-    return errorsObject;
-};
 
 const firstPostRegisterValidationPhase = (req, res) => {
     return getValidationErrors(req.body, {

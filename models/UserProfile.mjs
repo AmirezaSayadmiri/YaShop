@@ -6,15 +6,23 @@ const UserProfile = sequelize.define(
     {
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         bio: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         country: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        gender: {
+            type: DataTypes.ENUM("male", "female"),
+            allowNull: true,
         },
     },
     { timestamps: true }

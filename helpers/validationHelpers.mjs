@@ -1,3 +1,5 @@
+import validate from "validate.js";
+
 const giveErrorsArray = (validationObject) => {
     const errors = [];
 
@@ -11,6 +13,10 @@ const giveErrorsArray = (validationObject) => {
     return errors;
 };
 
+const getValidationErrors = (data, constraints) => {
+    const errorsObject = validate(data, constraints);
 
+    return errorsObject;
+};
 
-export { giveErrorsArray };
+export { giveErrorsArray, getValidationErrors };

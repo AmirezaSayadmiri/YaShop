@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import transporter from "../helpers/emailSender.mjs";
 import { getRandomCode } from "../helpers/helpers.mjs";
 import { randomBytes } from "crypto";
+import UserProfile from "../models/UserProfile.mjs";
 
 const loginUser = (res, email) => {
     const token = jwt.sign({ email }, process.env.JWT_SECRET_KEY);
@@ -24,6 +25,8 @@ const postRegister = async (req, res) => {
             verificationCode: getRandomCode(),
         });
 
+        await UserProfile.create({ userId: user.id });
+
         await transporter.sendMail({
             from: "PlogX",
             to: email,
@@ -31,7 +34,7 @@ const postRegister = async (req, res) => {
             text: "your verification code is " + user.verificationCode,
         });
 
-        res.status(201).json("check your email");
+        res.status(201).json({ messaeg: "check your email" });
     });
 };
 
