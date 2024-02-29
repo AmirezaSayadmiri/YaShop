@@ -2,6 +2,7 @@ import Address from "./models/Address.mjs";
 import Cart from "./models/Cart.mjs";
 import CartItem from "./models/CartItem.mjs";
 import Category from "./models/Category.mjs";
+import Image from "./models/Image.mjs";
 import Order from "./models/Order.mjs";
 import OrderStatus from "./models/OrderStatus.mjs";
 import Product from "./models/Product.mjs";
@@ -58,6 +59,9 @@ Order.belongsTo(OrderStatus, { foreignKey: "orderStatusId" });
 
 ShippingMethod.hasMany(Order, { foreignKey: "shippingId" });
 Order.belongsTo(ShippingMethod, { foreignKey: "shippingId" });
+
+Product.hasMany(Image, { foreignKey: "productId" });
+Image.belongsTo(Product, { foreignKey: "productId" });
 
 User.hasOne(UserProfile, { foreignKey: "userId" });
 UserProfile.belongsTo(User, { foreignKey: "userId" });
