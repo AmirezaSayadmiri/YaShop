@@ -1,10 +1,14 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database.mjs";
 
-const Category = sequelize.define(
-    "Category",
+const Product = sequelize.define(
+    "Product",
     {
         name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -12,4 +16,4 @@ const Category = sequelize.define(
     { timestamps: true }
 );
 
-export default Category;
+export default Product;

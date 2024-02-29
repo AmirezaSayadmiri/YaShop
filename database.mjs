@@ -1,6 +1,9 @@
+import { configDotenv } from "dotenv";
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize("plogx", "root", "as84", {
+configDotenv();
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
     host: "localhost",
     dialect: "mysql",
     logging: false,

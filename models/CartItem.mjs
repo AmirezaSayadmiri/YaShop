@@ -1,15 +1,15 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database.mjs";
 
-const Category = sequelize.define(
-    "Category",
+const CartItem = sequelize.define(
+    "CartItem",
     {
-        name: {
-            type: DataTypes.STRING,
+        qty: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
     { timestamps: true }
 );
 
-export default Category;
+export default CartItem;

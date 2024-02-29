@@ -22,7 +22,7 @@ app.use("/profile", addressRouter);
 app.use(ticketRouter);
 
 const runApp = async () => {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     app.listen(process.env.PORT);
 };
 

@@ -16,6 +16,10 @@ const Address = sequelize.define(
             type: DataTypes.STRING,
             allowNull: true,
         },
+        isDefault: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
     },
     { timestamps: true }
 );

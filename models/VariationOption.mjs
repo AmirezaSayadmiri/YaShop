@@ -1,10 +1,10 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database.mjs";
 
-const Tag = sequelize.define(
-    "Tag",
+const VariationOption = sequelize.define(
+    "VariationOption",
     {
-        name: {
+        value: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -12,4 +12,4 @@ const Tag = sequelize.define(
     { timestamps: true }
 );
 
-export default Tag;
+export default VariationOption;

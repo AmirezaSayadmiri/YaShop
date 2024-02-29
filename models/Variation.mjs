@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database.mjs";
 
-const Category = sequelize.define(
-    "Category",
+const Variation = sequelize.define(
+    "Variation",
     {
         name: {
             type: DataTypes.STRING,
@@ -12,4 +12,4 @@ const Category = sequelize.define(
     { timestamps: true }
 );
 
-export default Category;
+export default Variation;

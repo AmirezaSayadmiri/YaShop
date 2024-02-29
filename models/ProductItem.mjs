@@ -1,27 +1,23 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database.mjs";
 
-const Post = sequelize.define(
-    "Post",
+const ProductItem = sequelize.define(
+    "ProductItem",
     {
-        image: {
+        sku: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        body: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        rate: {
+        qty: {
             type: DataTypes.INTEGER,
-            defaultValue: 0,
+            allowNull: false,
+        },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
     },
     { timestamps: true }
 );
 
-export default Post;
+export default ProductItem;
